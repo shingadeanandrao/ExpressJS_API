@@ -1,9 +1,11 @@
 
 const express = require('express');
 const app =express()
+const cors = require('cors');
 
 const mongoose = require('mongoose');
 app.use(express.json());
+app.use(cors);
 
 //database connection
 mongoose.connect("mongodb://0.0.0.0:27017/api_dev")
@@ -114,6 +116,6 @@ app.delete("/products/:id",(req,res)=>{
     })
 })
 
-app.listen(8000,()=>{
+app.listen(5000,()=>{
     console.log("Server is running on 8000 port")
 })
